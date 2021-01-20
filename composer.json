@@ -1,5 +1,5 @@
 {
-    "name": "96qbhy/baidu-aip",
+    "name": "aoxiang/baidu-aip",
     "description": "百度 AI 开放平台 php-sdk",
     "license": "MIT",
     "keywords": [
@@ -11,8 +11,8 @@
     ],
     "authors": [
         {
-            "name": "qbhy",
-            "email": "96qbhy@gmail.com"
+            "name": "aoxiang",
+            "email": "mail@aoxiang.me"
         }
     ],
     "require": {
@@ -22,13 +22,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Qbhy\\BaiduAIP\\": "src"
+            "Aoxiang\\BaiduAIP\\": "src"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Qbhy\\BaiduAIP\\LaravelServiceProvider"
+                "Aoxiang\\BaiduAIP\\LaravelServiceProvider"
             ]
         }
     },
