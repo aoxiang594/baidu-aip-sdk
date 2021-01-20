@@ -5,14 +5,14 @@
  * Time: 20:28
  */
 
-namespace Qbhy\BaiduAIP;
+namespace Aoxiang\BaiduAIP;
 
 /**
  * Class Kg
  *
  * @author  qbhy <96qbhy@gmail.com>
  *
- * @package Qbhy\BaiduAIP
+ * @package Aoxiang\BaiduAIP
  */
 class Kg extends Api
 {

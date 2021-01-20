@@ -5,19 +5,19 @@
  * Time: 19:14
  */
 
-namespace Qbhy\BaiduAIP;
+namespace Aoxiang\BaiduAIP;
 
 use GuzzleHttp\RequestOptions;
 use Hanson\Foundation\AbstractAPI;
-use Qbhy\BaiduAIP\Exceptions\UndefinedApplicationConfigurationException;
-use Qbhy\BaiduAIP\Kernel\AipSampleSigner;
+use Aoxiang\BaiduAIP\Exceptions\UndefinedApplicationConfigurationException;
+use Aoxiang\BaiduAIP\Kernel\AipSampleSigner;
 
 /**
  * Class Api
  *
  * @author  qbhy <96qbhy@gmail.com>
  *
- * @package Qbhy\BaiduAIP
+ * @package Aoxiang\BaiduAIP
  */
 class Api extends AbstractAPI
 {
@@ -48,9 +48,9 @@ class Api extends AbstractAPI
      *
      * @return bool
      */
-    protected function isCloudUser(): bool
+    protected function isCloudUser() : bool
     {
-        if (is_null($this->isCloudUser)) {
+        if( is_null($this->isCloudUser) ){
             $scope             = $this->app->access_token->getScope();
             $this->isCloudUser = $scope && in_array($this->scope, explode(' ', $scope));
         }
@@ -59,21 +59,21 @@ class Api extends AbstractAPI
     }
 
     /**
-     * @param  string $method HTTP method
-     * @param  string $url
-     * @param  array  $param  参数
+     * @param  string  $method  HTTP method
+     * @param  string  $url
+     * @param  array   $param   参数
      *
      * @return array
      * @throws UndefinedApplicationConfigurationException
      */
-    private function getAuthHeaders($method, $url, $params = [], $headers = []): array
+    private function getAuthHeaders($method, $url, $params = [], $headers = []) : array
     {
-        if ($this->isCloudUser()) {
+        if( $this->isCloudUser() ){
             $obj = parse_url($url);
-            if (!empty($obj['query'])) {
+            if( !empty($obj['query']) ){
                 $query = explode('&', $obj['query']);
                 foreach ($query as $kv) {
-                    if (!empty($kv)) {
+                    if( !empty($kv) ){
                         list($k, $v) = explode('=', $kv, 2);
                         $params[$k] = $v;
                     }
@@ -105,6 +105,7 @@ class Api extends AbstractAPI
         $params = [
             'aipSdk'        => 'php',
             'aipSdkVersion' => $this->version,
+            'charset'       => 'UTF-8',
         ];
 
         $options['query'] = array_merge($options['query'], $params);
@@ -113,8 +114,8 @@ class Api extends AbstractAPI
     }
 
     /**
-     * @param string $url
-     * @param array  $options
+     * @param  string  $url
+     * @param  array   $options
      *
      * @return array
      */
@@ -126,16 +127,22 @@ class Api extends AbstractAPI
         $options = $this->specialHandling($url, $options);
 
         $options['headers'] = $this->getAuthHeaders('POST', $url, $params, $options['headers']);
-
-        $response = json_decode($this->getHttp()->request('POST', $url, $options)->getBody()->__toString(), true);
+//        $options['proxy']   = [
+//            'verify' => false,
+//            'http'   => '127.0.0.1:8888',
+//            'https'  => '127.0.0.1:8888',
+//        ];
+        $options['verify']  = false;
+        $response           = json_decode($this->getHttp()->request('POST', $url, $options)->getBody()->__toString(),
+            true);
 
         return $response;
     }
 
     /**
-     * @param string $url
-     * @param array  $data
-     * @param array  $headers
+     * @param  string  $url
+     * @param  array   $data
+     * @param  array   $headers
      *
      * @return array
      */
@@ -145,9 +152,9 @@ class Api extends AbstractAPI
     }
 
     /**
-     * @param string $url
-     * @param array  $data
-     * @param array  $headers
+     * @param  string  $url
+     * @param  array   $data
+     * @param  array   $headers
      *
      * @return array
      */
@@ -160,7 +167,7 @@ class Api extends AbstractAPI
     /**
      * 反馈
      *
-     * @param array $feedback
+     * @param  array  $feedback
      *
      * @return array
      */

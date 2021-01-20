@@ -5,10 +5,10 @@
  * Time: 19:11
  */
 
-namespace Qbhy\BaiduAIP;
+namespace Aoxiang\BaiduAIP;
 
 use Hanson\Foundation\Foundation;
-use Qbhy\BaiduAIP\Exceptions\UndefinedApplicationConfigurationException;
+use Aoxiang\BaiduAIP\Exceptions\UndefinedApplicationConfigurationException;
 
 /**
  * Class BaiduAI
@@ -26,7 +26,7 @@ use Qbhy\BaiduAIP\Exceptions\UndefinedApplicationConfigurationException;
  *
  * @author  qbhy <96qbhy@gmail.com>
  *
- * @package Qbhy\BaiduAI
+ * @package Aoxiang\BaiduAI
  */
 class BaiduAIP extends Foundation
 {

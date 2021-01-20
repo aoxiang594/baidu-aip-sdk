@@ -5,7 +5,7 @@
  * Time: 19:12
  */
 
-namespace Qbhy\BaiduAIP;
+namespace Aoxiang\BaiduAIP;
 
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;
@@ -15,7 +15,7 @@ use Pimple\ServiceProviderInterface;
  *
  * @author  qbhy <96qbhy@gmail.com>
  *
- * @package Qbhy\BaiduAIP
+ * @package Aoxiang\BaiduAIP
  */
 class ServiceProvider implements ServiceProviderInterface
 {

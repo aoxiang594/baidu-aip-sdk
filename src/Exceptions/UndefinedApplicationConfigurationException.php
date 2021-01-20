@@ -5,14 +5,14 @@
  * Time: 下午3:52
  */
 
-namespace Qbhy\BaiduAIP\Exceptions;
+namespace Aoxiang\BaiduAIP\Exceptions;
 
 /**
  * Class UndefinedApplicationConfigurationException
  *
  * @author  qbhy <96qbhy@gmail.com>
  *
- * @package Qbhy\BaiduAIP\Exceptions
+ * @package Aoxiang\BaiduAIP\Exceptions
  */
 class UndefinedApplicationConfigurationException extends AIPException
 {

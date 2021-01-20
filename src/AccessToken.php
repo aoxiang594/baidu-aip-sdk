@@ -5,7 +5,7 @@
  * Time: 20:17
  */
 
-namespace Qbhy\BaiduAIP;
+namespace Aoxiang\BaiduAIP;
 
 use GuzzleHttp\Exception\BadResponseException;
 use Hanson\Foundation\AbstractAccessToken;
@@ -15,7 +15,7 @@ use Hanson\Foundation\AbstractAccessToken;
  *
  * @author  qbhy <96qbhy@gmail.com>
  *
- * @package Qbhy\BaiduAIP
+ * @package Aoxiang\BaiduAIP
  */
 class AccessToken extends AbstractAccessToken
 {

@@ -5,14 +5,14 @@
  * Time: 下午3:49
  */
 
-namespace Qbhy\BaiduAIP\Exceptions;
+namespace Aoxiang\BaiduAIP\Exceptions;
 
 /**
  * Class AIPException
  *
  * @author  qbhy <96qbhy@gmail.com>
  *
- * @package Qbhy\BaiduAIP\Exceptions
+ * @package Aoxiang\BaiduAIP\Exceptions
  */
 class AIPException extends \Exception
 {

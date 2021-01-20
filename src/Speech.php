@@ -6,7 +6,7 @@
  * Time: 19:10
  */
 
-namespace Qbhy\BaiduAIP;
+namespace Aoxiang\BaiduAIP;
 
 use GuzzleHttp\RequestOptions;
 
@@ -15,7 +15,7 @@ use GuzzleHttp\RequestOptions;
  *
  * @author  qbhy <96qbhy@gmail.com>
  *
- * @package Qbhy\BaiduAIP
+ * @package Aoxiang\BaiduAIP
  */
 class Speech extends Api
 {

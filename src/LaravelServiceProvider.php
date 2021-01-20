@@ -5,7 +5,7 @@
  * Time: 下午2:14
  */
 
-namespace Qbhy\BaiduAIP;
+namespace Aoxiang\BaiduAIP;
 
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 use Illuminate\Foundation\Application as LaravelApplication;
@@ -16,7 +16,7 @@ use Laravel\Lumen\Application as LumenApplication;
  *
  * @author  qbhy <96qbhy@gmail.com>
  *
- * @package Qbhy\BaiduAIP
+ * @package Aoxiang\BaiduAIP
  */
 class LaravelServiceProvider extends BaseServiceProvider
 {

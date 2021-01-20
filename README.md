@@ -1,6 +1,9 @@
 # 百度 AI 开放平台 php-sdk
 > 支持 composer、laravel/lumen
 
+基于 [https://github.com/qbhy/baidu-aip-sdk](https://github.com/qbhy/baidu-aip-sdk)
+修改了一小部分。增加新闻摘要接口
+
 ## 要求
 requirements
 * composer
@@ -58,3 +61,6 @@ var_dump(json_encode($aip->use('your app')->image_censor->antiSpam('测试')));
 php吹水交流群请添加: 873213948  
 [qbhy/baidu-aip](https://github.com/qbhy/baidu-aip-sdk)  
 96qbhy@gmail.com
+
+
+[https://github.com/qbhy/baidu-aip-sdk]: https://github.com/qbhy/baidu-aip-sdk

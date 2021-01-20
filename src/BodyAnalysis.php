@@ -6,14 +6,14 @@
  * Time: 19:48
  */
 
-namespace Qbhy\BaiduAIP;
+namespace Aoxiang\BaiduAIP;
 
 /**
  * Class BodyAnalysis
  *
  * @author  qbhy <96qbhy@gmail.com>
  *
- * @package Qbhy\BaiduAIP
+ * @package Aoxiang\BaiduAIP
  */
 class BodyAnalysis extends Api
 {

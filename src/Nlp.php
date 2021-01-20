@@ -6,14 +6,14 @@
  * Time: 20:17
  */
 
-namespace Qbhy\BaiduAIP;
+namespace Aoxiang\BaiduAIP;
 
 /**
  * Class Nlp
  *
  * @author  qbhy <96qbhy@gmail.com>
  *
- * @package Qbhy\BaiduAIP
+ * @package Aoxiang\BaiduAIP
  */
 class Nlp extends Api
 {
@@ -83,6 +83,11 @@ class Nlp extends Api
     const emotionUrl = 'https://aip.baidubce.com/rpc/2.0/nlp/v1/emotion';
 
     /**
+     * 新闻摘要接口 new_summary api url
+     */
+    const newsSummaryUrl = 'https://aip.baidubce.com/rpc/2.0/nlp/v1/news_summary';
+
+    /**
      * 格式化结果
      *
      * @param $content string
@@ -97,8 +102,8 @@ class Nlp extends Api
     /**
      * 词法分析接口
      *
-     * @param string $text    - 待分析文本（目前仅支持GBK编码），长度不超过65536字节
-     * @param array  $options - 可选参数对象，key: value都为string类型
+     * @param  string  $text     - 待分析文本（目前仅支持GBK编码），长度不超过65536字节
+     * @param  array   $options  - 可选参数对象，key: value都为string类型
      *
      * @description options列表:
      * @return array
@@ -109,8 +114,8 @@ class Nlp extends Api
         $data['text'] = $text;
 
         $data = array_merge($data, $options);
-        $data = mb_convert_encoding(json_encode($data), 'GBK', 'UTF8');
-        $data = json_decode($data, true);
+        //$data = mb_convert_encoding(json_encode($data), 'GBK', 'UTF8');
+        //$data = json_decode($data, true);
 
         return $this->post(Nlp::lexerUrl, $data);
     }
@@ -118,8 +123,8 @@ class Nlp extends Api
     /**
      * 词法分析（定制版）接口
      *
-     * @param string $text    - 待分析文本（目前仅支持GBK编码），长度不超过65536字节
-     * @param array  $options - 可选参数对象，key: value都为string类型
+     * @param  string  $text     - 待分析文本（目前仅支持GBK编码），长度不超过65536字节
+     * @param  array   $options  - 可选参数对象，key: value都为string类型
      *
      * @description options列表:
      * @return array
@@ -130,8 +135,8 @@ class Nlp extends Api
         $data['text'] = $text;
 
         $data = array_merge($data, $options);
-        $data = mb_convert_encoding(json_encode($data), 'GBK', 'UTF8');
-        $data = json_decode($data, true);
+        //$data = mb_convert_encoding(json_encode($data), 'GBK', 'UTF8');
+        //$data = json_decode($data, true);
 
         return $this->post(Nlp::lexerCustomUrl, $data);
     }
@@ -139,8 +144,8 @@ class Nlp extends Api
     /**
      * 依存句法分析接口
      *
-     * @param string $text    - 待分析文本（目前仅支持GBK编码），长度不超过256字节
-     * @param array  $options - 可选参数对象，key: value都为string类型
+     * @param  string  $text     - 待分析文本（目前仅支持GBK编码），长度不超过256字节
+     * @param  array   $options  - 可选参数对象，key: value都为string类型
      *
      * @description options列表:
      *   mode 模型选择。默认值为0，可选值mode=0（对应web模型）；mode=1（对应query模型）
@@ -152,8 +157,8 @@ class Nlp extends Api
         $data['text'] = $text;
 
         $data = array_merge($data, $options);
-        $data = mb_convert_encoding(json_encode($data), 'GBK', 'UTF8');
-        $data = json_decode($data, true);
+        //$data = mb_convert_encoding(json_encode($data), 'GBK', 'UTF8');
+        //$data = json_decode($data, true);
 
         return $this->post(Nlp::depParserUrl, $data);
     }
@@ -161,8 +166,8 @@ class Nlp extends Api
     /**
      * 词向量表示接口
      *
-     * @param string $word    - 文本内容（GBK编码），最大64字节
-     * @param array  $options - 可选参数对象，key: value都为string类型
+     * @param  string  $word     - 文本内容（GBK编码），最大64字节
+     * @param  array   $options  - 可选参数对象，key: value都为string类型
      *
      * @description options列表:
      * @return array
@@ -173,8 +178,8 @@ class Nlp extends Api
         $data['word'] = $word;
 
         $data = array_merge($data, $options);
-        $data = mb_convert_encoding(json_encode($data), 'GBK', 'UTF8');
-        $data = json_decode($data, true);
+        //$data = mb_convert_encoding(json_encode($data), 'GBK', 'UTF8');
+        //$data = json_decode($data, true);
 
         return $this->post(Nlp::wordEmbeddingUrl, $data);
     }
@@ -182,8 +187,8 @@ class Nlp extends Api
     /**
      * DNN语言模型接口
      *
-     * @param string $text    - 文本内容（GBK编码），最大512字节，不需要切词
-     * @param array  $options - 可选参数对象，key: value都为string类型
+     * @param  string  $text     - 文本内容（GBK编码），最大512字节，不需要切词
+     * @param  array   $options  - 可选参数对象，key: value都为string类型
      *
      * @description options列表:
      * @return array
@@ -194,8 +199,8 @@ class Nlp extends Api
         $data['text'] = $text;
 
         $data = array_merge($data, $options);
-        $data = mb_convert_encoding(json_encode($data), 'GBK', 'UTF8');
-        $data = json_decode($data, true);
+        //$data = mb_convert_encoding(json_encode($data), 'GBK', 'UTF8');
+        //$data = json_decode($data, true);
 
         return $this->post(Nlp::dnnlmCnUrl, $data);
     }
@@ -203,9 +208,9 @@ class Nlp extends Api
     /**
      * 词义相似度接口
      *
-     * @param string $word1   - 词1（GBK编码），最大64字节
-     * @param string $word2   - 词1（GBK编码），最大64字节
-     * @param array  $options - 可选参数对象，key: value都为string类型
+     * @param  string  $word1    - 词1（GBK编码），最大64字节
+     * @param  string  $word2    - 词1（GBK编码），最大64字节
+     * @param  array   $options  - 可选参数对象，key: value都为string类型
      *
      * @description options列表:
      *   mode 预留字段，可选择不同的词义相似度模型。默认值为0，目前仅支持mode=0
@@ -218,8 +223,8 @@ class Nlp extends Api
         $data['word_2'] = $word2;
 
         $data = array_merge($data, $options);
-        $data = mb_convert_encoding(json_encode($data), 'GBK', 'UTF8');
-        $data = json_decode($data, true);
+        //$data = mb_convert_encoding(json_encode($data), 'GBK', 'UTF8');
+        //$data = json_decode($data, true);
 
         return $this->post(Nlp::wordSimEmbeddingUrl, $data);
     }
@@ -227,9 +232,9 @@ class Nlp extends Api
     /**
      * 短文本相似度接口
      *
-     * @param string $text1   - 待比较文本1（GBK编码），最大512字节
-     * @param string $text2   - 待比较文本2（GBK编码），最大512字节
-     * @param array  $options - 可选参数对象，key: value都为string类型
+     * @param  string  $text1    - 待比较文本1（GBK编码），最大512字节
+     * @param  string  $text2    - 待比较文本2（GBK编码），最大512字节
+     * @param  array   $options  - 可选参数对象，key: value都为string类型
      *
      * @description options列表:
      *   model 默认为"BOW"，可选"BOW"、"CNN"与"GRNN"
@@ -242,8 +247,8 @@ class Nlp extends Api
         $data['text_2'] = $text2;
 
         $data = array_merge($data, $options);
-        $data = mb_convert_encoding(json_encode($data), 'GBK', 'UTF8');
-        $data = json_decode($data, true);
+        //$data = mb_convert_encoding(json_encode($data), 'GBK', 'UTF8');
+        //$data = json_decode($data, true);
 
         return $this->post(Nlp::simnetUrl, $data);
     }
@@ -251,8 +256,8 @@ class Nlp extends Api
     /**
      * 评论观点抽取接口
      *
-     * @param string $text    - 评论内容（GBK编码），最大10240字节
-     * @param array  $options - 可选参数对象，key: value都为string类型
+     * @param  string  $text     - 评论内容（GBK编码），最大10240字节
+     * @param  array   $options  - 可选参数对象，key: value都为string类型
      *
      * @description options列表:
      *   type 评论行业类型，默认为4（餐饮美食）
@@ -264,8 +269,8 @@ class Nlp extends Api
         $data['text'] = $text;
 
         $data = array_merge($data, $options);
-        $data = mb_convert_encoding(json_encode($data), 'GBK', 'UTF8');
-        $data = json_decode($data, true);
+        //$data = mb_convert_encoding(json_encode($data), 'GBK', 'UTF8');
+        //$data = json_decode($data, true);
 
         return $this->post(Nlp::commentTagUrl, $data);
     }
@@ -273,8 +278,8 @@ class Nlp extends Api
     /**
      * 情感倾向分析接口
      *
-     * @param string $text    - 文本内容（GBK编码），最大102400字节
-     * @param array  $options - 可选参数对象，key: value都为string类型
+     * @param  string  $text     - 文本内容（GBK编码），最大102400字节
+     * @param  array   $options  - 可选参数对象，key: value都为string类型
      *
      * @description options列表:
      * @return array
@@ -285,8 +290,8 @@ class Nlp extends Api
         $data['text'] = $text;
 
         $data = array_merge($data, $options);
-        $data = mb_convert_encoding(json_encode($data), 'GBK', 'UTF8');
-        $data = json_decode($data, true);
+        //$data = mb_convert_encoding(json_encode($data), 'GBK', 'UTF8');
+        //$data = json_decode($data, true);
 
         return $this->post(Nlp::sentimentClassifyUrl, $data);
     }
@@ -294,9 +299,9 @@ class Nlp extends Api
     /**
      * 文章标签接口
      *
-     * @param string $title   - 篇章的标题，最大80字节
-     * @param string $content - 篇章的正文，最大65535字节
-     * @param array  $options - 可选参数对象，key: value都为string类型
+     * @param  string  $title    - 篇章的标题，最大80字节
+     * @param  string  $content  - 篇章的正文，最大65535字节
+     * @param  array   $options  - 可选参数对象，key: value都为string类型
      *
      * @description options列表:
      * @return array
@@ -308,18 +313,18 @@ class Nlp extends Api
         $data['content'] = $content;
 
         $data = array_merge($data, $options);
-        $data = mb_convert_encoding(json_encode($data), 'GBK', 'UTF8');
-        $data = json_decode($data, true);
+        //$data = mb_convert_encoding(json_encode($data), 'GBK', 'UTF8');
+        //$data = json_decode($data, true);
 
-        return $this->post(Nlp::keywordUrl, $data);
+        return $this->json(Nlp::keywordUrl, $data);
     }
 
     /**
      * 文章分类接口
      *
-     * @param string $title   - 篇章的标题，最大80字节
-     * @param string $content - 篇章的正文，最大65535字节
-     * @param array  $options - 可选参数对象，key: value都为string类型
+     * @param  string  $title    - 篇章的标题，最大80字节
+     * @param  string  $content  - 篇章的正文，最大65535字节
+     * @param  array   $options  - 可选参数对象，key: value都为string类型
      *
      * @description options列表:
      * @return array
@@ -331,8 +336,8 @@ class Nlp extends Api
         $data['content'] = $content;
 
         $data = array_merge($data, $options);
-        $data = mb_convert_encoding(json_encode($data), 'GBK', 'UTF8');
-        $data = json_decode($data, true);
+        //$data = mb_convert_encoding(json_encode($data), 'GBK', 'UTF8');
+        //$data = json_decode($data, true);
 
         return $this->post(Nlp::topicUrl, $data);
     }
@@ -340,8 +345,8 @@ class Nlp extends Api
     /**
      * 文本纠错接口
      *
-     * @param string $text    - 待纠错文本，输入限制511字节
-     * @param array  $options - 可选参数对象，key: value都为string类型
+     * @param  string  $text     - 待纠错文本，输入限制511字节
+     * @param  array   $options  - 可选参数对象，key: value都为string类型
      *
      * @description options列表:
      * @return array
@@ -352,8 +357,8 @@ class Nlp extends Api
         $data['text'] = $text;
 
         $data = array_merge($data, $options);
-        $data = mb_convert_encoding(json_encode($data), 'GBK', 'UTF8');
-        $data = json_decode($data, true);
+        //$data = mb_convert_encoding(json_encode($data), 'GBK', 'UTF8');
+        //$data = json_decode($data, true);
 
         return $this->post(Nlp::ecnetUrl, $data);
     }
@@ -361,8 +366,8 @@ class Nlp extends Api
     /**
      * 对话情绪识别接口接口
      *
-     * @param string $text    - 待识别情感文本，输入限制512字节
-     * @param array  $options - 可选参数对象，key: value都为string类型
+     * @param  string  $text     - 待识别情感文本，输入限制512字节
+     * @param  array   $options  - 可选参数对象，key: value都为string类型
      *
      * @description options列表:
      *   scene default（默认项-不区分场景），talk（闲聊对话-如度秘聊天等），task（任务型对话-如导航对话等），customer_service（客服对话-如电信/银行客服等）
@@ -374,9 +379,29 @@ class Nlp extends Api
         $data['text'] = $text;
 
         $data = array_merge($data, $options);
-        $data = mb_convert_encoding(json_encode($data), 'GBK', 'UTF8');
-        $data = json_decode($data, true);
+        //$data = mb_convert_encoding(json_encode($data), 'GBK', 'UTF8');
+        //$data = json_decode($data, true);
 
         return $this->post(Nlp::emotionUrl, $data);
     }
+
+
+    /**
+     * @param         $title
+     * @param         $content
+     * @param  array  $options
+     *
+     * @return array
+     */
+    public function newsSummary($title, $content, $options = [])
+    {
+        $data            = [];
+        $data['title']   = $title;
+        $data['content'] = $content;
+
+        $data = array_merge($data, $options);
+
+        return $this->json(Nlp::newsSummaryUrl, $data);
+    }
+
 }

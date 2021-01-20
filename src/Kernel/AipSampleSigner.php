@@ -5,7 +5,7 @@
  * Time: 上午10:58
  */
 
-namespace Qbhy\BaiduAIP\Kernel;
+namespace Aoxiang\BaiduAIP\Kernel;
 
 class AipSampleSigner
 {

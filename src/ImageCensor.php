@@ -6,14 +6,14 @@
  * Time: 上午11:40
  */
 
-namespace Qbhy\BaiduAIP;
+namespace Aoxiang\BaiduAIP;
 
 /**
  * Class ImageCensor
  *
  * @author  qbhy <96qbhy@gmail.com>
  *
- * @package Qbhy\BaiduAIP
+ * @package Aoxiang\BaiduAIP
  */
 class ImageCensor extends Api
 {

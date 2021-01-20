@@ -5,7 +5,7 @@
  * Time: 上午10:59
  */
 
-namespace Qbhy\BaiduAIP\Kernel;
+namespace Aoxiang\BaiduAIP\Kernel;
 
 class AipHttpUtil
 {
